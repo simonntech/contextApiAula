@@ -12,11 +12,12 @@ type UserScreenProps = {
 export default function UserScreen({ route }: UserScreenProps) {
     const { username } = route.params;
     const UserContextValue = useContext(UserContext);
-    const nome = UserContextValue?.nome || 'Nenhum nome salvo';
+    const nomeDinamico = UserContextValue?.loginName || 'Nenhum nome salvo';
+    const nomeEstatico = UserContextValue?.nome || 'Nenhum'
     return (
         <View>
-            <Text style={{fontSize: 32}}>Rota: {username}</Text>
-            <Text style={{fontSize: 32}}>Context API: {nome}</Text>
+            <Text style={{ fontSize: 22 }}>Nome estático: {nomeEstatico}</Text>
+            <Text style={{ fontSize: 22 }}>Nome dinâmico: {nomeDinamico}</Text>
         </View>
     )
 }
