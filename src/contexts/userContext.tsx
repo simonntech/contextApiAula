@@ -8,8 +8,8 @@ export default function UserContextProvider({ children }: any) {
     const contextValue = { nome: 'Brunão' };
 
     return (
-        <UserContextProvider value={contextValue}>
+        <UserContext.Provider value={contextValue}>
             {children}
-        </UserContextProvider>
+        </UserContext.Provider>
     )
 }
